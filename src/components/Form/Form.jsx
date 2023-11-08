@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./Form.css";
 import { useTelegram } from "../../hooks/useTelegram";
-import { json } from "react-router-dom";
 const Form = () => {
   const [country, setCountry] = useState("");
   const [street, setStreet] = useState("");
@@ -14,7 +13,7 @@ const Form = () => {
       street,
       subject,
     };
-    tg.onSendData(JSON.stringify(data));
+    tg.sendData(JSON.stringify(data));
   }, []);
 
   useEffect(() => {
